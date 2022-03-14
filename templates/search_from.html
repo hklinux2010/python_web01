@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单教程</title>
+    {% load static %}
+</head>
+<body>
+<form action="/search/" method="get">
+    {% csrf_token %}
+    <input type="text" name="q">
+    <input type="submit" value="搜索">
+</form>
+    <p>{{ rlt }}</p>
+
+
+<img src="/static/images/images1.jpg" width="400" height="400">
+
+
+</body>
+</html>
