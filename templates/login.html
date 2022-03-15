@@ -42,9 +42,6 @@
                 <div class="tpl-login-logo">
 
                 </div>
-
-
-
                 <form class="am-form tpl-form-line-form" action="/login" method="post">
                     {% csrf_token %}
                     <div class="am-form-group">
@@ -66,7 +63,7 @@
 
                     </div>
                 </form>
-                <span style="color:green;">{{ error_message }}</span>
+                <span style="color:green;">{{ message }}</span>
             </div>
         </div>
     </div>

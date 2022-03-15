@@ -45,22 +45,23 @@
               </span>
 
 
-                <form class="am-form tpl-form-line-form">
+                <form class="am-form tpl-form-line-form" action="/insert_data" method="post">
+                    {% csrf_token %}
                     <div class="am-form-group">
-                        <input type="text" class="tpl-form-input" id="user-name" placeholder="邮箱">
+                        <input type="text" class="tpl-form-input" name="email" placeholder="邮箱">
 
                     </div>
 
                     <div class="am-form-group">
-                        <input type="text" class="tpl-form-input" id="user-name" placeholder="用户名">
+                        <input type="text" class="tpl-form-input" name="user-name" placeholder="用户名">
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" id="user-name" placeholder="请输入密码">
+                        <input type="password" class="tpl-form-input" name="password" placeholder="请输入密码">
                     </div>
 
                     <div class="am-form-group">
-                        <input type="password" class="tpl-form-input" id="user-name" placeholder="再次输入密码">
+                        <input type="password" class="tpl-form-input" name="re-password" placeholder="再次输入密码">
                     </div>
 
                     <div class="am-form-group tpl-login-remember-me">
@@ -69,6 +70,7 @@
        
                         我已阅读并同意 <a href="javascript:;">《用户注册协议》</a> 
                          </label>
+                        <span style="color:green;">{{ message }}</span>
 
                     </div>
 
@@ -79,7 +81,7 @@
 
                     <div class="am-form-group">
 
-                        <button type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+                        <button type="submit" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
 
                     </div>
                 </form>

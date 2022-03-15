@@ -17,19 +17,20 @@ from django.contrib import admin
 from django.conf.urls import url
 from django.urls import path
 
-from app01 import views,testdb,search
+from app01 import views, testdb, search
 
 urlpatterns = [
     url('^admin/', admin.site.urls),
-    path('index', views.index,name="index"),
-    path('table',views.table,name='table'),
-    path('calendar',views.calendar,name='calendar'),
-    path('page_form',views.page_form,name='page_form'),
-    path('chart',views.chart,name='chart'),
-    path('table_list',views.table_list,name='table_list'),
-    path('table_list_img',views.table_list_img,name='table_list_img'),
-    path('sign_up',views.sign_up,name='sign_up'),
-    path('login',views.login,name='login'),
+    path('index', views.index, name="index"),
+    path('table', views.table, name='table'),
+    path('calendar', views.calendar, name='calendar'),
+    path('page_form', views.page_form, name='page_form'),
+    path('chart', views.chart, name='chart'),
+    path('table_list', views.table_list, name='table_list'),
+    path('table_list_img', views.table_list_img, name='table_list_img'),
+    path('sign_up', views.sign_up, name='sign_up'),
+    path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
-    path('page_404',views.page_404,name='page_404')
+    path('page_404', views.page_404, name='page_404'),
+    path('insert_data', views.insert_data, name='insert_data')
 ]
