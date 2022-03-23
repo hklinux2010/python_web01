@@ -13,6 +13,5 @@ class EmpForm(forms.Form):
 
     def clean_name(self):
         val=self.cleaned_data.get("name")
-
         if val.isdigit():
             raise ValidationError("姓名不能为纯数字")

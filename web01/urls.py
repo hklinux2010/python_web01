@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from django.urls import path
+from django.urls import path, include
 
-from app01 import views, testdb, search
+from app02 import views02
+from app01 import views
+from QQapi import urls
 
 urlpatterns = [
     url('^admin/', admin.site.urls),
@@ -32,5 +34,11 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
     path('page_404', views.page_404, name='page_404'),
-    path('insert_data', views.insert_data, name='insert_data')
+
+    path('insert_data', views.insert_data, name='insert_data'),
+    path('test01', views.test01, name="test01"),
+    path('add_book', views02.add_book, name="add_book"),
+
+    path('testapi/', include(urls))
+
 ]

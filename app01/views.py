@@ -1,8 +1,23 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from app01.My_forms import EmpForm
+from django import forms
 from app01 import models
 from django.core.exceptions import ValidationError
+
+
+
+
+
+
+def test01(request):
+    return render(request, 'test01.html')
+
+
+def auth(request):
+    status = request.session.get("is_login")
+    if not status:
+        return redirect('login')
 
 
 # Create your views here.

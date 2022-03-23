@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>测试页面</title>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="/assets/js/echarts.js"></script>
+  </head>
 <body>
-{# 参数的调用 #}
-{{name|safe}}
+  <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+  <div id="main" style="width: 500px;height:500px;"></div>
+    <script type="text/javascript">
 
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+          text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+          price: ['价格']
+        },
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子'],
+          price: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子', '衣服']
+        },
+        yAxis: {},
+        series: [
+          {
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          },
+          {
+            name: '价格',
+            type: 'line',
+            data: [10, 20, 20, 60, 1000, 150, 3000]
+          }
+
+        ]
+      };
+
+      myChart.showLoading();
+      $.get('data.json').done(
+          function (price) {
+              myChart.hideLoading();
+              // myChart.setOption(option);
+      });
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
 </body>
 </html>
